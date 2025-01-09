@@ -32,7 +32,7 @@ This project is a SwiftUI application that leverages HealthKit to track and visu
 - **HealthAppUITests/**: Contains UI tests.
   - **HealthDataUITests.swift**: UI tests for the application.
 - **README.md**: Documentation for the project.
-- **.gitignore**: Specifies files to ignore in version control.
+
 
 ## Getting Started
 To get started with this project, clone the repository and open the `HealthApp.xcodeproj` file in Xcode. Ensure you have the necessary permissions set up for HealthKit in your app's capabilities.
