@@ -1,4 +1,5 @@
 import XCTest
+@testable import HealthApp
 
 final class HealthDataUITests: XCTestCase {
 

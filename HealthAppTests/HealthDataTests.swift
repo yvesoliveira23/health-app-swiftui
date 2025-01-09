@@ -1,5 +1,5 @@
 import XCTest
-@testable import PortfolioPiece
+@testable import HealthApp
 
 class HealthDataTests: XCTestCase {
 
