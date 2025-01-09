@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <objectVersion>46</objectVersion>
+    <rootObject>PBXProject</rootObject>
+    <objects>
+        <PBXProject>
+            <isa>PBXProject</isa>
+            <attributes>
+                <LastUpgradeCheck>1200</LastUpgradeCheck>
+                <ORGANIZATIONNAME>YourOrganizationName</ORGANIZATIONNAME>
+            </attributes>
+            <buildConfigurationList>BuildConfigurationList</buildConfigurationList>
+            <compatibilityVersion>Xcode 14.0</compatibilityVersion>
+            <developmentRegion>en</developmentRegion>
+            <hasScannedForEncodings>0</hasScannedForEncodings>
+            <mainGroup>MainGroup</mainGroup>
+            <productRefGroup>ProductGroup</productRefGroup>
+            <projectDirPath></projectDirPath>
+            <projectRoot></projectRoot>
+            <targets>
+                <PBXNativeTarget>
+                    <isa>PBXNativeTarget</isa>
+                    <buildConfigurationList>BuildConfigurationList</buildConfigurationList>
+                    <dependencies/>
+                    <name>PortfolioPiece</name>
+                    <productName>PortfolioPiece</productName>
+                    <productReference>ProductReference</productReference>
+                    <productType>com.apple.product-type.application</productType>
+                    <sourceBuildPhase>SourceBuildPhase</sourceBuildPhase>
+                    <buildPhases>
+                        <PBXBuildPhase>
+                            <isa>PBXBuildPhase</isa>
+                            <buildActionMask>2147483647</buildActionMask>
+                            <files/>
+                            <runOnlyForDeploymentPostprocessing>0</runOnlyForDeploymentPostprocessing>
+                        </PBXBuildPhase>
+                    </buildPhases>
+                </PBXNativeTarget>
+            </targets>
+        </PBXProject>
+        <PBXGroup>
+            <isa>PBXGroup</isa>
+            <children>
+                <PBXGroup>
+                    <isa>PBXGroup</isa>
+                    <name>PortfolioPiece</name>
+                    <path>PortfolioPiece</path>
+                </PBXGroup>
+            </children>
+            <sourceTree>SOURCE_ROOT</sourceTree>
+        </PBXGroup>
+        <PBXBuildConfiguration>
+            <isa>PBXBuildConfiguration</isa>
+            <name>Debug</name>
+            <baseConfigurationReference>BaseConfiguration</baseConfigurationReference>
+            <buildSettings>
+                <CODE_SIGN_IDENTITY>iPhone Developer</CODE_SIGN_IDENTITY>
+                <DEVELOPMENT_TEAM>YourTeamID</DEVELOPMENT_TEAM>
+                <IPHONEOS_DEPLOYMENT_TARGET>14.0</IPHONEOS_DEPLOYMENT_TARGET>
+            </buildSettings>
+        </PBXBuildConfiguration>
+        <PBXBuildConfiguration>
+            <isa>PBXBuildConfiguration</isa>
+            <name>Release</name>
+            <baseConfigurationReference>BaseConfiguration</baseConfigurationReference>
+            <buildSettings>
+                <CODE_SIGN_IDENTITY>iPhone Distribution</CODE_SIGN_IDENTITY>
+                <DEVELOPMENT_TEAM>YourTeamID</DEVELOPMENT_TEAM>
+                <IPHONEOS_DEPLOYMENT_TARGET>14.0</IPHONEOS_DEPLOYMENT_TARGET>
+            </buildSettings>
+        </PBXBuildConfiguration>
+    </objects>
+</project>
