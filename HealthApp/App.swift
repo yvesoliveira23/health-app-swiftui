@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct PortfolioPieceApp: App {
+struct HealthApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

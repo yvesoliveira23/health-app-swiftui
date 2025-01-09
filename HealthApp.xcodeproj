@@ -22,8 +22,8 @@
                     <isa>PBXNativeTarget</isa>
                     <buildConfigurationList>BuildConfigurationList</buildConfigurationList>
                     <dependencies/>
-                    <name>PortfolioPiece</name>
-                    <productName>PortfolioPiece</productName>
+                    <name>HealthApp</name>
+                    <productName>HealthApp</productName>
                     <productReference>ProductReference</productReference>
                     <productType>com.apple.product-type.application</productType>
                     <sourceBuildPhase>SourceBuildPhase</sourceBuildPhase>
@@ -43,8 +43,8 @@
             <children>
                 <PBXGroup>
                     <isa>PBXGroup</isa>
-                    <name>PortfolioPiece</name>
-                    <path>PortfolioPiece</path>
+                    <name>HealthApp</name>
+                    <path>HealthApp</path>
                 </PBXGroup>
             </children>
             <sourceTree>SOURCE_ROOT</sourceTree>
