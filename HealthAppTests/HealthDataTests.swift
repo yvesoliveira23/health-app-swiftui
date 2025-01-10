@@ -1,37 +1,55 @@
 import XCTest
 @testable import HealthApp
 
-class HealthDataTests: XCTestCase {
+final class HealthDataTests: XCTestCase {
 
-    var healthDataModel: HealthDataModel!
+    private var healthDataModel: HealthDataModel!
 
     override func setUpWithError() throws {
-        super.setUp()
+        try super.setUpWithError()
         healthDataModel = HealthDataModel(steps: 0, weight: 0.0)
     }
 
     override func tearDownWithError() throws {
         healthDataModel = nil
-        super.tearDown()
+        try super.tearDownWithError()
     }
+
+    // MARK: - Initial State Tests
 
     func testInitialHealthData() throws {
         XCTAssertEqual(healthDataModel.steps, 0)
         XCTAssertEqual(healthDataModel.weight, 0.0)
     }
 
+    // MARK: - Update Tests
+
     func testUpdateSteps() throws {
-        healthDataModel.updateSteps(100)
-        XCTAssertEqual(healthDataModel.steps, 100)
+        // Given
+        let newSteps = 100
+        
+        // When
+        healthDataModel.updateSteps(newSteps)
+        
+        // Then
+        XCTAssertEqual(healthDataModel.steps, newSteps)
     }
 
     func testUpdateWeight() throws {
-        healthDataModel.updateWeight(70.5)
-        XCTAssertEqual(healthDataModel.weight, 70.5)
+        // Given
+        let newWeight = 70.5
+        
+        // When
+        healthDataModel.updateWeight(newWeight)
+        
+        // Then
+        XCTAssertEqual(healthDataModel.weight, newWeight)
     }
 
+    // MARK: - Performance Tests
+
     func testHealthDataModelPerformance() throws {
-        self.measure {
+        measure {
             for _ in 0..<1000 {
                 healthDataModel.updateSteps(1)
                 healthDataModel.updateWeight(70.0)
