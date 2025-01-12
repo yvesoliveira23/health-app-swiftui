@@ -1,7 +1,8 @@
 # HealthApp - SwiftUI, HealthKit, Charts
 
-## Overview
-This project is a SwiftUI application that leverages HealthKit to track and visualize health data, including steps and weight. It features interactive charts and a user-friendly interface, making it a comprehensive tool for health monitoring.
+## About
+
+HealthApp is a SwiftUI application designed for educational purposes. It leverages HealthKit to track and visualize health data, including steps and weight. The app features interactive charts and a user-friendly interface, making it a comprehensive tool for learning about health data integration and visualization in iOS development.
 
 ## Project Structure
 - **HealthApp/**: Contains the main application code.
