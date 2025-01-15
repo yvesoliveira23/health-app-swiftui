@@ -17,7 +17,7 @@ final class HealthKitErrorTests: XCTestCase {
         
         // MARK: - Availability Tests
         
-        func testTypeNotAvailableErrorDescription() {
+        func testErrorDescription_WhenTypeNotAvailable_ShouldReturnCorrectDescription() {
             // Given
             sut = .typeNotAvailable
             
@@ -31,7 +31,7 @@ final class HealthKitErrorTests: XCTestCase {
 
         // MARK: - Authorization Tests
         
-        func testUnauthorizedErrorDescription() {
+        func testErrorDescription_WhenUnauthorized_ShouldReturnCorrectDescription() {
             // Given
             sut = .unauthorized
             
@@ -45,7 +45,7 @@ final class HealthKitErrorTests: XCTestCase {
         
         // MARK: - Fetch Error Tests
         
-        func testFetchFailedErrorDescription() {
+        func testErrorDescription_WhenFetchFailedWithUnderlyingError_ShouldReturnCorrectDescription() {
             // Given
             let underlyingError = createTestError(description: "Test error")
             sut = .fetchFailed(underlyingError)
@@ -59,7 +59,7 @@ final class HealthKitErrorTests: XCTestCase {
             XCTAssertTrue(description!.contains("Test error"))
         }
         
-        func testFetchFailedErrorDescriptionWithNil() {
+        func testErrorDescription_WhenFetchFailedWithNil_ShouldReturnUnknownErrorDescription() {
             // Given
             sut = .fetchFailed(nil)
             
@@ -72,7 +72,7 @@ final class HealthKitErrorTests: XCTestCase {
             XCTAssertTrue(description!.contains("Unknown error"))
         }
         
-        func testFetchFailedErrorDescriptionWithEmptyError() {
+        func testErrorDescription_WhenFetchFailedWithEmptyError_ShouldReturnDefaultErrorDescription() {
             // Given
             let underlyingError = createTestError(description: nil)
             sut = .fetchFailed(underlyingError)
@@ -87,7 +87,7 @@ final class HealthKitErrorTests: XCTestCase {
         
         // MARK: - Save Error Tests
         
-        func testSaveFailedErrorDescription() {
+        func testErrorDescription_WhenSaveFailedWithUnderlyingError_ShouldReturnCorrectDescription() {
             // Given 
             let underlyingError = createTestError(description: "Test error")
             sut = .saveFailed(underlyingError)
@@ -101,7 +101,7 @@ final class HealthKitErrorTests: XCTestCase {
             XCTAssertTrue(description!.contains("Test error"))
         }
         
-        func testSaveFailedErrorDescriptionWithNil() {
+        func testErrorDescription_WhenSaveFailedWithNil_ShouldReturnUnknownErrorDescription() {
             // Given
             sut = .saveFailed(nil)
             
@@ -114,7 +114,7 @@ final class HealthKitErrorTests: XCTestCase {
             XCTAssertTrue(description!.contains("Unknown error"))
         }
         
-        func testSaveFailedErrorDescriptionWithEmptyError() {
+        func testErrorDescription_WhenSaveFailedWithEmptyError_ShouldReturnDefaultErrorDescription() {
             // Given
             let underlyingError = createTestError(description: nil)
             sut = .saveFailed(underlyingError)

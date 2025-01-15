@@ -17,14 +17,14 @@ final class HealthDataTests: XCTestCase {
 
     // MARK: - Initial State Tests
 
-    func testInitialHealthData() throws {
+    func testInitialHealthData_ShouldHaveZeroStepsAndWeight() throws {
         XCTAssertEqual(healthDataModel.steps, 0)
         XCTAssertEqual(healthDataModel.weight, 0.0)
     }
 
     // MARK: - Update Tests
 
-    func testUpdateSteps() throws {
+    func testUpdateSteps_ShouldUpdateStepsCorrectly() throws {
         // Given
         let newSteps = 100
         
@@ -35,7 +35,7 @@ final class HealthDataTests: XCTestCase {
         XCTAssertEqual(healthDataModel.steps, newSteps)
     }
 
-    func testUpdateWeight() throws {
+    func testUpdateWeight_ShouldUpdateWeightCorrectly() throws {
         // Given
         let newWeight = 70.5
         
@@ -48,7 +48,7 @@ final class HealthDataTests: XCTestCase {
 
     // MARK: - Performance Tests
 
-    func testHealthDataModelPerformance() throws {
+    func testHealthDataModelPerformance_WhenUpdatingStepsAndWeight_ShouldPerformEfficiently() throws {
         measure {
             for _ in 0..<1000 {
                 healthDataModel.updateSteps(1)
