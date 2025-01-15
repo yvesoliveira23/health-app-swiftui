@@ -2,39 +2,85 @@ import XCTest
 @testable import HealthApp
 
 final class HealthDataUITests: XCTestCase {
-
+    
+    // MARK: - Properties
+    
+    private var sut: XCUIApplication!
+    
+    // MARK: - Lifecycle Methods
+    
     override func setUpWithError() throws {
+        try super.setUpWithError()
         continueAfterFailure = false
-        let app = XCUIApplication()
-        app.launch()
+        sut = XCUIApplication()
+        sut.launch()
     }
-
-    func testDashboardViewLoads() throws {
-        let app = XCUIApplication()
-        XCTAssertTrue(app.navigationBars["Dashboard"].exists, "Dashboard view should be loaded.")
+    
+    override func tearDownWithError() throws {
+        sut = nil
+        try super.tearDownWithError()
     }
-
-    func testDataListViewDisplaysData() throws {
-        let app = XCUIApplication()
-        app.tabBars.buttons["Data List"].tap()
-        XCTAssertTrue(app.tables["HealthDataList"].exists, "Data List view should display health data.")
+    
+    // MARK: - View Loading Tests
+    
+    func testDashboardView_whenAppLaunches_shouldDisplayDashboard() throws {
+        // Given
+        let navigationBar = sut.navigationBars["Dashboard"]
+        
+        // When
+        let exists = navigationBar.exists
+        
+        // Then
+        XCTAssertTrue(exists, "Dashboard view should be loaded.")
     }
-
-    func testStepBarChartViewDisplays() throws {
-        let app = XCUIApplication()
-        app.tabBars.buttons["Step Chart"].tap()
-        XCTAssertTrue(app.otherElements["StepBarChart"].exists, "Step Bar Chart should be displayed.")
+    
+    // MARK: - Navigation Tests
+    
+    func testDataListView_whenNavigatingToDataList_shouldDisplayHealthData() throws {
+        // Given
+        sut.tabBars.buttons["Data List"].tap()
+        
+        // When
+        let exists = sut.tables["HealthDataList"].exists
+        
+        // Then
+        XCTAssertTrue(exists, "Data List view should display health data.")
     }
-
-    func testWeightLineChartViewDisplays() throws {
-        let app = XCUIApplication()
-        app.tabBars.buttons["Weight Chart"].tap()
-        XCTAssertTrue(app.otherElements["WeightLineChart"].exists, "Weight Line Chart should be displayed.")
+    
+    // MARK: - Chart Display Tests
+    
+    func testStepBarChart_whenNavigatingToStepChart_shouldDisplayChart() throws {
+        // Given
+        sut.tabBars.buttons["Step Chart"].tap()
+        
+        // When
+        let exists = sut.otherElements["StepBarChart"].exists
+        
+        // Then
+        XCTAssertTrue(exists, "Step Bar Chart should be displayed.")
     }
-
-    func testErrorHandlingViewDisplays() throws {
-        let app = XCUIApplication()
-        app.tabBars.buttons["Error Handling"].tap()
-        XCTAssertTrue(app.alerts["Error"].exists, "Error Handling view should display an error alert if applicable.")
+    
+    func testWeightLineChart_whenNavigatingToWeightChart_shouldDisplayChart() throws {
+        // Given
+        sut.tabBars.buttons["Weight Chart"].tap()
+        
+        // When
+        let exists = sut.otherElements["WeightLineChart"].exists
+        
+        // Then
+        XCTAssertTrue(exists, "Weight Line Chart should be displayed.")
+    }
+    
+    // MARK: - Error Handling Tests
+    
+    func testErrorHandling_whenNavigatingToErrorView_shouldDisplayAlert() throws {
+        // Given
+        sut.tabBars.buttons["Error Handling"].tap()
+        
+        // When
+        let exists = sut.alerts["Error"].exists
+        
+        // Then
+        XCTAssertTrue(exists, "Error Handling view should display an error alert if applicable.")
     }
 }
