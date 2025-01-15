@@ -1,3 +1,6 @@
+import Foundation
+import SwiftUI
+
 class HealthDataModel: Identifiable, Codable {
     var id: UUID
     var steps: Int

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DataListView: View {
-    @ObservedObject var viewModel: HealthDataViewModel
+    @StateObject var viewModel = HealthDataViewModel()
 
     var body: some View {
         List(viewModel.healthDataEntries) { entry in
