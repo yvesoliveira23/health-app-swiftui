@@ -18,6 +18,9 @@ enum HealthKitError: LocalizedError {
     /// A HealthKit data save operation failed
     /// - Parameter error: Optional underlying system error
     case saveFailed(Error?)
+
+    /// Failed to create an HKObjectType
+    case invalidObjectType(String)
     
     /// A localized message describing what error occurred.
     var errorDescription: String? {
@@ -30,7 +33,8 @@ enum HealthKitError: LocalizedError {
             return "Failed to fetch HealthKit data: \(error?.localizedDescription ?? "Unknown error")"
         case .saveFailed(let error):
             return "Failed to save HealthKit data: \(error?.localizedDescription ?? "Unknown error")"
+        case .invalidObjectType(let typeIdentifier):
+            return "Failed to create HealthKit object type for identifier: \(typeIdentifier)"
         }
     }
 }
-        
