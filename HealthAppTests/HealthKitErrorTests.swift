@@ -126,6 +126,21 @@ final class HealthKitErrorTests: XCTestCase {
             XCTAssertNotNil(description)
             XCTAssertTrue(description!.contains("TestDomain error 1"))
         }
+
+        // MARK: - Invalid Object Type Error Tests
+
+        func testErrorDescription_WhenInvalidObjectType_ShouldReturnCorrectDescription() {
+            // Given
+            let typeIdentifier = "HKQuantityTypeIdentifierBodyMass"
+            sut = .invalidObjectType(typeIdentifier)
+
+            // When
+            let description = sut.errorDescription
+
+            // Then
+            XCTAssertNotNil(description)
+            XCTAssertEqual(description, "Failed to create HealthKit object type for identifier: \(typeIdentifier)")
+        }
         
         // MARK: - Helper Methods
         
